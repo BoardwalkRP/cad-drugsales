@@ -15,6 +15,7 @@ RegisterNetEvent('cad-drugsales:initiatedrug', function(data)
 	if Framework:RemoveItem(src, item, data.amt) then
 		Framework:AddMoney(src, "cash", price)
 		TriggerClientEvent('cad-drugsales:notify', src, 'You recieved $' .. price)
+		TriggerClientEvent('citra-gang-zones:client:adjustInfluence', src, Config.InfluencePerSale)
 		if Config.Debug then print('You got ' .. data.amt .. ' ' .. data.item .. ' for $' .. price) end
 	else
 		TriggerClientEvent('cad-drugsales:notify', src, 'You could not sell ' .. data.item .. ' (not enough item)')
