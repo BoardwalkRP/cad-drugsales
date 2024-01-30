@@ -16,7 +16,7 @@ Config.Target = 'qb' -- 'qb', 'ox' (false: DrawText3D)
 Config.Radial = 'qb' -- 'qb', 'ox'
 
 -- what dispatch to use for police alerts?
-Config.Dispatch = 'qb' -- 'qb', 'ps', 'moz', 'cd', 'custom'
+Config.Dispatch = 'ps' -- 'qb', 'ps', 'moz', 'cd', 'custom'
 
 -- what menu you want to use?
 Config.OxMenu = true -- true: Ox Menu, false: Ox Context Menu
@@ -34,13 +34,16 @@ Config.SellPedOnVehicle = false
 Config.ChanceSell = 70 -- (in %) 
 
 -- Random sell amount
-Config.RandomSell = { min = 1, max = 6 } -- range: min, max
+Config.RandomSell = { min = 1, max = 3 } -- range: min, max
 
 -- Selling timeout so that the menu doesnt stay forever
-Config.SellTimeout = 10 -- (secs) Max time you get to choose your option
+Config.SellTimeout = 30 -- (secs) Max time you get to choose your option
 
 -- The below option decides whether the person has to toggle selling in a zone (radialmenu/command) (Recommended: false)
 Config.ShouldToggleSelling = false
+
+-- citra-gang-zones: Influence amount per sale
+Config.InfluencePerSale = 2.5
 
 -- Ped models that you dont want to be sold to
 Config.BlacklistPeds = {
@@ -55,13 +58,19 @@ Config.BlacklistPeds = {
 }
 
 -- The below option is for you to enable selling anywhere
-Config.SellAnywhere = false
+Config.SellAnywhere = true
 
 -- SellItems to be configured only if [Config.SellAnywhere = true]
 Config.SellItems = {
-    { item = 'cokebaggy',    price = math.random(100, 200) },
-    { item = 'weed_amnesia', price = math.random(100, 200) },
-    { item = 'meth',         price = math.random(100, 200) },
+    { item = 'cokebaggy',       price = math.random(25, 40) },
+    { item = 'weed_whitewidow', price = math.random(5, 10) },
+    { item = 'weed_ogkush',     price = math.random(5, 10) },
+    { item = 'weed_skunk',      price = math.random(5, 10) },
+    { item = 'weed_amnesia',    price = math.random(5, 10) },
+    { item = 'weed_purplehaze', price = math.random(5, 10) },
+    { item = 'weed_ak47',       price = math.random(5, 10) },
+    { item = 'crack_baggy',     price = math.random(15, 20) },
+    { item = 'meth',            price = math.random(15, 20) },
 }
 
 -- SellZones will only if [Config.SellAnywhere = false]
